@@ -6,22 +6,21 @@ $mail = new PHPMailer;
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+$mail->Host = "your host";  			      // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'janakrule@gmail.com';                 // SMTP username
-$mail->Password = '9928323998janak';                           // SMTP password
+$mail->Username = "your email id";                    // SMTP username
+$mail->Password = "your password";                    // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('janakrule@gmail.com', 'Mailer');
-$mail->addAddress('sahilkk555@gmail.com', 'Sahil');     // Add a recipient
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
+$mail->setFrom('your email ID', 'Mailer');	      // Name is optional
+$mail->addAddress('recipient email ID', 'Sahil');     // Add a recipient
+$mail->addReplyTo('info@example.com', 'Information');
+$mail->addCC('CC email ID');
+$mail->addBCC('BCC email ID');
 
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Congrats';
@@ -36,17 +35,3 @@ if(!$mail->send()) {
 }
 
 ?>
-
-<html>
-
-	<head>
-    	<title>Sending HTML email using PHP</title>
-    </head>
-    
-    <body>
-    	<form>
-			<button >Send</button>
-        </form>
-    </body>
-
-</html>
